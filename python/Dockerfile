@@ -32,7 +32,7 @@ RUN \
 
 USER ${UNAME}
 
-COPY --chown=${UID}:${GID}  vscext.sh /home/${UNAME}/
+COPY --chown=${UID}:${GID} --chmod=755 vscext.sh /home/${UNAME}/
 COPY --chown=${UID}:${GID} --chmod=644 settings.json /home/${UNAME}/.vscode-server/data/Machine/settings.json
 
 WORKDIR /home/${UNAME}
