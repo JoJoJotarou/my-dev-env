@@ -1,0 +1,20 @@
+{
+    /* Python */
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/${workspaceFolderBasename}"
+    },
+    "python.analysis.completeFunctionParens": true,
+    "python.linting.mypyEnabled": true,
+    "python.formatting.provider": "black",
+    "python.analysis.extraPaths": [
+        "./"
+    ],
+    "files.exclude": {
+        "*/__pycache__": true,
+        "*/*/__pycache__": true,
+        "*/*/*/__pycache__": true,
+        "build": true,
+        "*.egg-info": true,
+        "**/.mypy_cache": true
+    }
+}
