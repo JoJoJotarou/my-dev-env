@@ -63,7 +63,7 @@ jobs:
         with:
           context: ./python
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.get_tag.outputs.tag }}
+          tags: ${{ env.IMAGE_NAME }}:${{ steps.get_tag.outputs.tag }}
           labels: ${{ steps.meta.outputs.labels }}
 
       # Sign the resulting Docker image digest except on PRs.
