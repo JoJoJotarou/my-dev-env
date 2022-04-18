@@ -11,7 +11,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: python-dev
+  IMAGE_NAME: ${{ secrets.DOCKER_HUB_USERNAME }}/python-dev
 
 jobs:
   build:

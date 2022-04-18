@@ -1,8 +1,6 @@
 # syntax=docker/dockerfile:1.4.1
 
-ARG BASE_VERSION=3.10.4-alpine3.15
-
-FROM python:${BASE_VERSION}
+FROM python:3.7.13-alpine3.15
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE en_US:en
