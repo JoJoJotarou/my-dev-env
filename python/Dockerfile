@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4.1
 
-FROM python:3.8.13-alpine3.15
+FROM python:3.9.12-alpine3.15
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE en_US:en
