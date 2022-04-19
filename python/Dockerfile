@@ -35,6 +35,8 @@ USER ${UNAME}
 COPY --chown=${UID}:${GID} --chmod=755 vscext.sh /home/${UNAME}/
 COPY --chown=${UID}:${GID} --chmod=644 settings.json /home/${UNAME}/.vscode-server/data/Machine/settings.json
 
+ENV key=/home/${UNAME}/.local/bin:$PATH
+
 WORKDIR /home/${UNAME}
 
 CMD [ "bash" ]
