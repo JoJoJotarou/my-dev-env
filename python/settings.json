@@ -1,8 +1,13 @@
 {
     /* Python */
+    // Uncomment this when you use src layout
     "terminal.integrated.env.linux": {
-        "PYTHONPATH": "${workspaceFolder}/${workspaceFolderBasename}"
+        "PYTHONPATH": "${workspaceFolder}/src"
     },
+    // Uncomment this when you use flat layout
+    // "terminal.integrated.env.linux": {
+    // 	"PYTHONPATH": "${workspaceFolder}"
+    // },
     "python.analysis.completeFunctionParens": true,
     "python.linting.mypyEnabled": true,
     "python.formatting.provider": "black",
