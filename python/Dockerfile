@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1.4.1
 
-FROM python:3.10.4-alpine3.15
+ARG TAG
+
+FROM python:${TAG}
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE en_US:en
