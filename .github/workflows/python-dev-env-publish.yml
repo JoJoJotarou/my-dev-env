@@ -16,6 +16,11 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      max-parallel: 5
+      matrix:
+        tags: "$(jq -c 'join(",")' python/tag.json)"
 
     steps:
       - name: Checkout repository
@@ -54,7 +59,8 @@ jobs:
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: ./python
+          build-args: TAG=${{ matrix.tags }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.IMAGE_NAME }}:${{ steps.get_tag.outputs.tag }}
+          tags: ${{ env.IMAGE_NAME }}:${{ matrix.tags }}
           labels: ${{ steps.meta.outputs.labels }}
