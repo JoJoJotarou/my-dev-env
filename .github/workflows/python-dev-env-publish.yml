@@ -26,7 +26,8 @@ jobs:
         name: Generate
         run: |
           tags="$(jq -c '.[]' python/tag.json )"
-          echo "::set-output name=tags::$arches"
+          echo "$tags"
+          echo "::set-output name=tags::$tags"
 
   build:
     runs-on: ubuntu-latest
